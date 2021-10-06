@@ -6,15 +6,15 @@
 
 class Watchman < Formula
   desc "Watch files and take action when they change"
-  homepage "https://github.com/facebook/watchman"
-  url "https://github.com/facebook/watchman/releases/download/v2020.08.17.00/watchman-v2020.08.17.00-macos.zip"
-  sha256 "badb94e4ab43e7ea3c6b02e6fb0b0f4d7a2df8a1286088a9226018fce134ba87"
+  homepage "https://facebook.github.io/watchman/"
+  url "https://github.com/facebook/watchman/releases/download/v2021.08.23.00/watchman-v2021.08.23.00-macos.zip"
+  sha256 "f5ad03f7cdd6f406bd03d77c8cba3a9578b87cf54c34e72295f9340fe5fe0a60"
   license "Apache-2.0"
   version_scheme 1
 
   def install
     bin.install "bin/watchman"
-    lib.install Dir["lib/*"]
+    #lib.fix_ldpath Dir["lib/*"]
     mkdir_p "/usr/local/var/run/watchman"
     chmod 0o2777, "/usr/local/var/run/watchman"
   end

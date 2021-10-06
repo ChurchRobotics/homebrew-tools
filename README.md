@@ -1,5 +1,5 @@
-Facebook Homebrew Tap
-=====================
+Church Robotics Homebrew Cask Tap
+=================================
 
 This is a [Homebrew][brew] tap for formulae for software developed by Facebook.
 
@@ -13,7 +13,7 @@ document.
 
 Once homebrew is installed, simply run:
 
-    brew tap facebook/fb
+    brew tap ChurchRobotics/cask
 
 Some of these formulae may require OS X 10.10 (Yosemite) or higher.
 
