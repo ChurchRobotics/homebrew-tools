@@ -4,29 +4,25 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-class Watchman < Formula
+cask "watchman" do
+  version "v2021.08.23.00"
+  sha256 "f5ad03f7cdd6f406bd03d77c8cba3a9578b87cf54c34e72295f9340fe5fe0a60"
+
+  url "https://github.com/facebook/watchman/releases/download/#{version}/watchman-#{version}-macos.zip"
+  name "Watchman"
   desc "Watch files and take action when they change"
   homepage "https://facebook.github.io/watchman/"
-  url "https://github.com/facebook/watchman/releases/download/v2021.08.23.00/watchman-v2021.08.23.00-macos.zip"
-  sha256 "f5ad03f7cdd6f406bd03d77c8cba3a9578b87cf54c34e72295f9340fe5fe0a60"
-  license "Apache-2.0"
-  version_scheme 1
 
-  def install
-    bin.install "bin/watchman"
-    #lib.fix_ldpath Dir["lib/*"]
-    mkdir_p "/usr/local/var/run/watchman"
-    chmod 0o2777, "/usr/local/var/run/watchman"
+  binray "watchman-#{version}-macos/bin/watchman"
+
+  postflight do
+    set_permissions "/usr/local/var/run/watchman", "2777"
   end
 
-  def caveats
-    <<~EOS
-      If you plan to use watchman on more than one user, run `chmod g+s /usr/local/var/run/watchman`.
-      We cannot do this for you.  See https://github.com/Homebrew/brew/issues/6019.
-    EOS
-  end
+  zap trash: "/usr/local/var/run/watchman"
 
-  test do
-    system "watchman", "version"
-  end
+  caveats <<~EOS
+    If you plan to use watchman on more than one user, run `chmod g+s /usr/local/var/run/watchman`.
+    We cannot do this for you.  See https://github.com/Homebrew/brew/issues/6019.
+  EOS
 end

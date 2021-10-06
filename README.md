@@ -1,5 +1,5 @@
-Church Robotics Homebrew Tap
-============================
+Church Robotics Tools Homebrew Tap
+==================================
 
 This is a [Homebrew][brew] tap for formulae for software developed by Facebook.
 
@@ -13,7 +13,7 @@ document.
 
 Once homebrew is installed, simply run:
 
-    brew tap ChurchRobotics/brew
+    brew tap ChurchRobotics/tools
 
 Some of these formulae may require OS X 10.10 (Yosemite) or higher.
 
