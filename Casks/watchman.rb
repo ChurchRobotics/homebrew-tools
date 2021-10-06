@@ -13,7 +13,7 @@ cask "watchman" do
   desc "Watch files and take action when they change"
   homepage "https://facebook.github.io/watchman/"
 
-  binray "watchman-#{version}-macos/bin/watchman"
+  binary "watchman-#{version}-macos/bin/watchman"
 
   postflight do
     set_permissions "/usr/local/var/run/watchman", "2777"
