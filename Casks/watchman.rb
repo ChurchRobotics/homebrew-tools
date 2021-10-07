@@ -16,7 +16,7 @@ cask "watchman" do
   binary "watchman-#{version}-macos/bin/watchman"
 
   postflight do
-    set_permissions "/usr/local/var/run/watchman", "2777"
+    set_permissions "/usr/local/var/run/watchman", "777"
   end
 
   zap trash: "/usr/local/var/run/watchman"
