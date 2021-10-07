@@ -14,6 +14,7 @@ cask "watchman" do
   homepage "https://facebook.github.io/watchman/"
 
   binary "watchman-#{version}-macos/bin/watchman"
+  binary "watchman-#{version}-macos/bin/watchmanctl"
 
   postflight do
     set_permissions "/usr/local/var/run/watchman", "777"
